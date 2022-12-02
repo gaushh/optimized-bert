@@ -1,0 +1,33 @@
+bert:
+  evaluation_strategy: steps
+  gradient_accumulation_steps: 8
+  logging_steps: 1000
+  mlm_probability: 0.15
+  model_path: ../../models/exp01/model
+  num_train_epochs: 1
+  per_device_eval_batch_size: 64
+  per_device_train_batch_size: 10
+  save_steps: 1000
+dataset:
+  processed_test_dir: ../../data/processed/processed_test
+  processed_train_dir: ../../data/processed/processed_train
+  raw_dataset_dir: ../../data/raw/raw_dataset
+  raw_test_path: ../../data/raw/test.txt
+  raw_train_path: ../../data/raw/train.txt
+  test_size: 0.01
+seed: 43
+tokenizer:
+  files:
+  - ../../data/raw/test.txt
+  max_length: 512
+  special_tokens:
+  - '[PAD]'
+  - '[UNK]'
+  - '[CLS]'
+  - '[SEP]'
+  - '[MASK]'
+  - <S>
+  - <T>
+  tokenizer_path: ../../models/tokenizer
+  truncate_longer_samples: false
+  vocab_size: 30522
