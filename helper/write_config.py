@@ -19,7 +19,7 @@ config_info = {'seed': 43,
                    'special_tokens': ["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]", "<S>", "<T>"]
                },
                'bert': {
-                   'model_path': "../../models/exp01/model",
+                   'model_path': "../../models/exp01",
                    'mlm_probability': 0.15,
                    'evaluation_strategy': "steps",
                    'num_train_epochs': 1,

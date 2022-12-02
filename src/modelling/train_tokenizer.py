@@ -28,6 +28,8 @@ tokenizer.train(files= files, vocab_size= vocab_size, special_tokens= special_to
 # enable truncation up to the maximum 512 tokens
 tokenizer.enable_truncation(max_length)
 
+if not os.path.isdir('../../models'):
+  os.mkdir('../../models')
 
 if not os.path.isdir(tokenizer_path):
   os.mkdir(tokenizer_path)
