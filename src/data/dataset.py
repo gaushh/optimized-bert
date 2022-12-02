@@ -18,6 +18,12 @@ def dataset_to_text(dataset, output_filename="data.txt"):
 dataset = load_dataset("bookcorpus")["train"]
 dataset = dataset.train_test_split(config['dataset']["test_size"], config["seed"])
 
+if not os.path.isdir(config['dataset']["raw_train_path"]):
+  os.mkdir(config['dataset']["raw_train_path"])
+
+if not os.path.isdir(config['dataset']["raw_test_path"]):
+  os.mkdir(config['dataset']["raw_test_path"])
+
 # save the training set to train.txt
 dataset_to_text(dataset["train"], config['dataset']["raw_train_path"])
 # save the testing set to test.txt
