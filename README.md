@@ -70,12 +70,12 @@
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 -->
 
-This project is an attempt to democratize [BERT](https://arxiv.org/pdf/1810.04805.pdf) by reducing its number of trainable parameters and in-turn making it faster to train and fine-tune. Since cosine similarity (computed in BERT while performing dot product or Query, Key and Value matrices) is prone to convex hull, we plan to replace cosine with other similarity metrics are check how that impacts reduced model dimensions. 
+This project is an attempt to democratize [BERT](https://arxiv.org/pdf/1810.04805.pdf) by reducing its number of trainable parameters and in-turn making it faster to train and fine-tune. Since cosine similarity (computed in BERT while performing dot product for Query, Key and Value matrices) is prone to convex hull, we plan to replace cosine with other similarity metrics and check how that impacts reduced model dimensions. 
 
-We are benchmarking the model's performance on the following distance metrics:
-* Cosine distance
-* Euclidean distance
-* Gaussian softmax
+We are benchmarking the model's performance on the following distance/similarity measures:
+* Cosine 
+* Euclidean 
+* Gaussian softmax 
 
 Due to constraint of compute resources, we are currently validating our hypothesis on just 1% book corpus data. We intend to increase the train data in the subsequent iterations.
 
