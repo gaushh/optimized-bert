@@ -26,8 +26,8 @@ config_info = {'seed': 43,
                    'per_device_train_batch_size': 10,
                    'gradient_accumulation_steps': 8,
                    'per_device_eval_batch_size': 64,
-                   'logging_steps': 1000,
-                   'save_steps': 1000,
+                   'logging_steps': 100,
+                   'save_steps': 100,
                }
                }
 
