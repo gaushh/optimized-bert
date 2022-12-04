@@ -36,6 +36,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
+<!--
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -60,7 +61,7 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
+-->
 
 
 <!-- ABOUT THE PROJECT -->
@@ -77,9 +78,6 @@ We are benchmarking the model's performance on the following distance metrics:
 * Gaussian softmax
 
 Due to constraint of compute resources, we are currently validating our hypothesis on just 1% book corpus data. We intend to increase the train data in the subsequent iterations.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!--
@@ -108,7 +106,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 Now you can set everything up using the single shell script or following step-by-step instructions.
 ### Single Script Setup
 Run the shell script to set everything up with default configs and start pre-training BERT.
-* shell
+* shell script
   ```sh
   sh setup.sh
   ```
@@ -116,8 +114,6 @@ Run the shell script to set everything up with default configs and start pre-tra
 ### Step By Step Setup
 
 Here are the step by step instructions to setup the repo and in-turn understand the process.
-
-Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services.
 
 1. Install required packages. 
    ```sh
@@ -153,12 +149,13 @@ Below is an example of how you can instruct your audience on installing and sett
    python train_bert.py
    ```
 <!-- USAGE EXAMPLES -->
+<!--
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 For more examples, please refer to the [Documentation](https://example.com)_
-
+-->
 
 
 <!-- CONTRIBUTING -->
@@ -200,8 +197,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments -->
-<!-- 
-
+<!--
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Choose an Open Source License](https://choosealicense.com)
@@ -249,3 +245,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
