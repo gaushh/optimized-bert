@@ -27,15 +27,29 @@ vocab_size = config['tokenizer']["vocab_size"]
 max_length = config['tokenizer']["max_length"]
 tokenizer_path = config["tokenizer"]["tokenizer_path"]
 
+# output_dir = config['bert']["output_dir"]
+model_path = config['bert']["model_path"]
 evaluation_strategy = config['bert']["evaluation_strategy"]
 mlm_probability = config['bert']["mlm_probability"]
-model_path = config['bert']["model_path"]
 num_train_epochs = config['bert']["num_train_epochs"]
 per_device_train_batch_size = config['bert']["per_device_train_batch_size"]
 per_device_eval_batch_size = config['bert']["per_device_eval_batch_size"]
 gradient_accumulation_steps = config['bert']["gradient_accumulation_steps"]
 logging_steps = config['bert']["logging_steps"]
 save_steps = config['bert']["save_steps"]
+
+learning_rate = config['bert']["learning_rate"]
+weight_decay = config['bert']["weight_decay"]
+adam_beta1 = config['bert']["adam_beta1"]
+adam_beta2 = config['bert']["adam_beta2"]
+lr_scheduler_type = config['bert']["lr_scheduler_type"]
+warmup_ratio = config['bert']["warmup_ratio"]
+
+push_to_hub = config['bert']["push_to_hub"]
+hub_token = config['bert']["hub_token"]
+hub_private_repo = config['bert']["hub_private_repo"]
+hub_strategy = config['bert']["hub_strategy"]
+hub_model_id = config['bert']["hub_model_id"]
 
 print("Loading tokenizer and model ...")
 
@@ -63,9 +77,18 @@ training_args = TrainingArguments(
     gradient_accumulation_steps=gradient_accumulation_steps,  # accumulating the gradients before updating the weights
     logging_steps=logging_steps,             # evaluate, log and save model checkpoints every 1000 step
     save_steps=save_steps,
-    report_to="wandb"
-    # load_best_model_at_end=True,  # whether to load the best model (in terms of loss) at the end of training
-    # save_total_limit=3,           # whether you don't have much space so you let only 3 model weights saved in the disk
+    report_to="wandb",
+    learning_rate=learning_rate,
+    weight_decay=weight_decay,
+    adam_beta1=adam_beta1,
+    adam_beta2=adam_beta2,
+    lr_scheduler_type=lr_scheduler_type,
+    warmup_ratio=warmup_ratio,
+    push_to_hub = push_to_hub,
+    hub_token = hub_token,
+    hub_private_repo = hub_private_repo,
+    hub_strategy = hub_strategy,
+    hub_model_id = hub_model_id
     )
 
 
