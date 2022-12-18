@@ -154,7 +154,7 @@ data/raw/raw_dataset/test/
 
 models/tokenizer/
 models/exp01/model/
-
+src/modelling/wandb/
 .idea
 
 
