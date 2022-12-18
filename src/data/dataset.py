@@ -24,11 +24,11 @@ def dataset_to_text(dataset, output_filename="data.txt"):
 
 
 dataset_bookcorpus_train = load_dataset("bookcorpus")["train"]
-print("dataset_bookcorpus_train : ", dataset_bookcorpus_train)
+# print("dataset_bookcorpus_train : ", dataset_bookcorpus_train)
 dataset_sampled = dataset_bookcorpus_train.train_test_split(test_size=config['dataset']["data_proportion"], seed=config["seed"])["test"]
-print("dataset_sampled : ", dataset_sampled)
+# print("dataset_sampled : ", dataset_sampled)
 dataset = dataset_sampled.train_test_split(test_size=config['dataset']["test_size"], seed=config["seed"])
-print("dataset3 : ", dataset)
+# print("dataset3 : ", dataset)
 
 # print(config['dataset']["raw_train_path"])
 # if not os.path.isdir(config['dataset']["raw_train_path"]):

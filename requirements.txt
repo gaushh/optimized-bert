@@ -3,3 +3,4 @@ datasets==2.7.1
 transformers==4.24.
 wandb==0.13.5
 accelerate
+tensorboard

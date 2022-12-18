@@ -153,7 +153,7 @@ data/raw/raw_dataset/train/
 data/raw/raw_dataset/test/
 
 models/tokenizer/
-models/exp01/model/
+models/exp01/
 src/modelling/wandb/
 .idea
 .DS_Store
