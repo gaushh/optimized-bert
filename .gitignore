@@ -156,5 +156,5 @@ models/tokenizer/
 models/exp01/model/
 src/modelling/wandb/
 .idea
-
+.DS_Store
 

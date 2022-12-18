@@ -24,6 +24,7 @@ def dataset_to_text(dataset, output_filename="data.txt"):
 
 
 dataset = load_dataset("bookcorpus")["train"]
+dataset = dataset.train_test_split(config['dataset']["data_proportion"], config["seed"])["test"]
 dataset = dataset.train_test_split(config['dataset']["test_size"], config["seed"])
 
 # print(config['dataset']["raw_train_path"])

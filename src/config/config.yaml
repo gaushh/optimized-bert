@@ -20,6 +20,7 @@ bert:
   warmup_ratio: 0.01
   weight_decay: 0.01
 dataset:
+  data_proportion: 0.05
   processed_test_dir: ../../data/processed/processed_test
   processed_train_dir: ../../data/processed/processed_train
   raw_dataset_dir: ../../data/raw/raw_dataset
