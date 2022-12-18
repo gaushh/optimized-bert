@@ -86,11 +86,11 @@ training_args = TrainingArguments(
     adam_beta2=adam_beta2,
     lr_scheduler_type=lr_scheduler_type,
     warmup_ratio=warmup_ratio,
-    push_to_hub = push_to_hub,
-    hub_token = hub_token,
-    hub_private_repo = hub_private_repo,
-    hub_strategy = hub_strategy,
-    hub_model_id = hub_model_id
+    push_to_hub=push_to_hub,
+    hub_token=hub_token,
+    hub_private_repo=hub_private_repo,
+    hub_strategy=hub_strategy,
+    hub_model_id=hub_model_id
     )
 
 

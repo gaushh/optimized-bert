@@ -4,7 +4,7 @@ import os
 config_info = {'seed': 43,
                'dataset': {
                    "data_proportion": 0.05,
-                   'test_size': 0.01,
+                   'test_size': 0.05,
                    'raw_train_path': "../../data/raw/train.txt",
                    'raw_test_path': "../../data/raw/test.txt",
                    'raw_dataset_dir': "../../data/raw/raw_dataset",
