@@ -9,6 +9,7 @@ from transformers import DataCollatorForLanguageModeling
 from architecture import BertSelfAttention
 import wandb
 
+
 with open("../config/exp02_config.yaml", "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 

@@ -1,6 +1,7 @@
 import math
 import torch
 import torch.nn as nn
+from typing import List, Optional, Tuple, Union
 
 class BertSelfAttention(nn.Module):
     def __init__(self, config, position_embedding_type=None):
