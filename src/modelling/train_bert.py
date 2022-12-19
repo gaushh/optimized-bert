@@ -26,7 +26,7 @@ test_dataset = load_from_disk(test_path)
 print("Reading hyperparameters from config ... ")
 
 vocab_size = config['tokenizer']["vocab_size"]
-hidden_size = config['tokenizer']["hidden_size"]
+hidden_size = config['bert']["hidden_size"]
 # max_length = config['tokenizer']["max_length"]
 tokenizer_path = config["tokenizer"]["tokenizer_path"]
 
