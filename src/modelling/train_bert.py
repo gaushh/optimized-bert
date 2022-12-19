@@ -6,9 +6,10 @@ from transformers import BertTokenizerFast
 from transformers import TrainingArguments
 from transformers import BertConfig, BertForMaskedLM
 from transformers import DataCollatorForLanguageModeling
+from architecture import BertSelfAttention
 import wandb
 
-with open("../config/config.yaml", "r") as yamlfile:
+with open("../config/exp02_config.yaml", "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 wandb.init(project="optimized-bert", entity="madridistas")
@@ -24,7 +25,8 @@ test_dataset = load_from_disk(test_path)
 print("Reading hyperparameters from config ... ")
 
 vocab_size = config['tokenizer']["vocab_size"]
-max_length = config['tokenizer']["max_length"]
+hidden_size = config['tokenizer']["hidden_size"]
+# max_length = config['tokenizer']["max_length"]
 tokenizer_path = config["tokenizer"]["tokenizer_path"]
 
 # output_dir = config['bert']["output_dir"]
@@ -57,8 +59,28 @@ print("Loading tokenizer and model ...")
 tokenizer = BertTokenizerFast.from_pretrained(tokenizer_path)
 
 
-model_config = BertConfig(vocab_size=vocab_size, max_position_embeddings=max_length)
+model_config = BertConfig(vocab_size=vocab_size, hidden_size=hidden_size)
 model = BertForMaskedLM(config=model_config)
+
+
+##################  Updating config of all 12 bert layers  #################################
+
+model.base_model.encoder.layer[0].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[1].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[2].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[3].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[4].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[5].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[6].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[7].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[8].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[9].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[10].attention.self = BertSelfAttention(config = model_config)
+model.base_model.encoder.layer[11].attention.self = BertSelfAttention(config = model_config)
+
+##########################################################################################################
+
+
 
 data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=True, mlm_probability=mlm_probability)
 

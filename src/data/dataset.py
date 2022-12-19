@@ -2,7 +2,7 @@ from datasets import load_dataset
 import yaml
 import os
 
-with open("../config/config.yaml", "r") as yamlfile:
+with open("../config/exp02_config.yaml", "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 if not os.path.isdir('../../data'):

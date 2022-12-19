@@ -4,7 +4,7 @@ bert:
   auto_find_batch_size: true
   evaluation_strategy: epoch
   gradient_accumulation_steps: 8
-  hidden_size: 768
+  hidden_size: 128
   hub_model_id: gaushh/optimized-bert
   hub_private_repo: true
   hub_strategy: checkpoint

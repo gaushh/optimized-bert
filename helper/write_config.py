@@ -20,7 +20,8 @@ config_info = {'seed': 43,
                    'special_tokens': ["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]", "<S>", "<T>"]
                },
                'bert': {
-                   'model_path': "../../models/exp01",
+                   'hidden_size': 128,
+                   'model_path': "../../models/exp02",
                    'mlm_probability': 0.15,
                    'evaluation_strategy': "epoch",
                    'num_train_epochs': 15,
@@ -46,6 +47,6 @@ config_info = {'seed': 43,
                }
 
 
-with open("../src/config/config.yaml", 'w') as yamlfile:
+with open("../src/config/exp02_config.yaml", 'w') as yamlfile:
     data = yaml.dump(config_info, yamlfile)
     print("Write successful")

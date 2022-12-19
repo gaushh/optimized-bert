@@ -3,7 +3,7 @@ from datasets import load_from_disk, concatenate_datasets
 from itertools import chain
 import yaml
 
-with open("../config/config.yaml", "r") as yamlfile:
+with open("../config/exp02_config.yaml", "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 max_length = config["tokenizer"]["max_length"]
