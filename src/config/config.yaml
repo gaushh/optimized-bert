@@ -14,8 +14,8 @@ bert:
   mlm_probability: 0.15
   model_path: ../../models/exp01
   num_train_epochs: 15
-  push_to_hub: true
-  save_steps: 100
+  push_to_hub: false
+  save_steps: 5000
   save_strategy: epoch
   warmup_ratio: 0.01
   weight_decay: 0.01
