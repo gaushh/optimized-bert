@@ -9,8 +9,10 @@ from transformers import DataCollatorForLanguageModeling
 from architecture import BertSelfAttention
 import wandb
 
+config_file = os.environ.get('CONFIG_FILE')
+config_path = "../config/{}.yaml".format(config_file)
 
-with open("../config/exp02_config.yaml", "r") as yamlfile:
+with open(config_path, "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 wandb.init(project="optimized-bert", entity="madridistas")

@@ -3,9 +3,9 @@ import json
 import yaml
 from tokenizers import BertWordPieceTokenizer
 
-
-
-with open("../config/exp02_config.yaml", "r") as yamlfile:
+config_file = os.environ.get('CONFIG_FILE')
+config_path = "../config/{}.yaml".format(config_file)
+with open(config_path, "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 

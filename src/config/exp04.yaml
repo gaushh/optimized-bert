@@ -4,7 +4,7 @@ bert:
   auto_find_batch_size: true
   evaluation_strategy: epoch
   gradient_accumulation_steps: 8
-  hidden_size: 128
+  hidden_size: 96
   hub_model_id: gaushh/optimized-bert
   hub_private_repo: true
   hub_strategy: checkpoint
@@ -13,7 +13,7 @@ bert:
   logging_steps: 100
   lr_scheduler_type: linear
   mlm_probability: 0.15
-  model_path: ../../models/exp01
+  model_path: ../../models/exp02
   num_train_epochs: 15
   push_to_hub: false
   save_steps: 5000

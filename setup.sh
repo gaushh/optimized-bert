@@ -1,3 +1,4 @@
+export CONFIG_FILE="exp02"
 pip install -r requirements.txt
 pip install -r requirements.txt
 wandb login --relogin 8c46e02a8d52f960fb349e009c5b6773c25b6957

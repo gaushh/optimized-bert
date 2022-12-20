@@ -2,8 +2,11 @@ from transformers import BertTokenizerFast
 from datasets import load_from_disk, concatenate_datasets
 from itertools import chain
 import yaml
+import os
 
-with open("../config/exp02_config.yaml", "r") as yamlfile:
+config_file = os.environ.get('CONFIG_FILE')
+config_path = "../config/{}.yaml".format(config_file)
+with open(config_path, "r") as yamlfile:
     config = yaml.load(yamlfile, Loader=yaml.FullLoader)
 
 max_length = config["tokenizer"]["max_length"]
