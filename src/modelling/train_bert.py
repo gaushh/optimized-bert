@@ -115,7 +115,8 @@ training_args = TrainingArguments(
     hub_token=hub_token,
     hub_private_repo=hub_private_repo,
     hub_strategy=hub_strategy,
-    hub_model_id=hub_model_id
+    hub_model_id=hub_model_id,
+    run_name=config_file
     )
 
 
