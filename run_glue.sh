@@ -22,4 +22,4 @@ python src/glue/run_glue.py \
   --per_gpu_train_batch_size $PER_GPU_TRAIN_BATCH_SIZE \
   --learning_rate $LEARNING_RATE \
   --num_train_epochs $NUM_TRAIN_EPOCHS \
-  --output_dir /$OUTPUT_DIR/$MODEL_TYPE-$TASK_NAME-$MODEL_PATH
+  --output_dir $OUTPUT_DIR
