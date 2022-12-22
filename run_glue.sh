@@ -1,25 +1,60 @@
+
+# include parse_yaml function
 pip install -r requirements.txt
-export MODEL_TYPE="bert"
+ls
+source ./yaml_parser.sh
+
 # model path should be same location as this shell file
-export MODEL_PATH="bert-base-uncased"
-export TASK_NAME="RTE"
-export GLUE_DIR="data/glue_data"
-export OUTPUT_DIR="output_glue"
-export MAX_SEQ_LENGTH=128
-export PER_GPU_TRAIN_BATCH_SIZE=32
-export LEARNING_RATE=2e-5
-export NUM_TRAIN_EPOCHS=3.0
 #python src/glue/download_glue_data.py
+export output_dir="output_glue"
+mkdir $output_dir
+mkdir $output_dir/$config_task1_task_name
+mkdir $output_dir/$config_task2_task_name
+mkdir $output_dir/$config_task3_task_name
+eval $(parse_yaml src/config/glue_config.yaml "config_")
+
+
+echo $config_task1_model_type
+
 python src/glue/run_glue.py \
-  --model_type $MODEL_TYPE \
-  --model_name_or_path $MODEL_PATH \
-  --task_name $TASK_NAME \
+  --model_type $config_task1_model_type \
+  --model_name_or_path $config_task1_model_path \
+  --task_name $config_task1_task_name \
   --do_train \
   --do_eval \
   --do_lower_case \
-  --data_dir $GLUE_DIR/$TASK_NAME/ \
-  --max_seq_length $MAX_SEQ_LENGTH \
-  --per_gpu_train_batch_size $PER_GPU_TRAIN_BATCH_SIZE \
-  --learning_rate $LEARNING_RATE \
-  --num_train_epochs $NUM_TRAIN_EPOCHS \
-  --output_dir $OUTPUT_DIR
+  --data_dir $config_task1_glue_dir/$config_task1_task_name/ \
+  --max_seq_length $config_task1_max_seq_length \
+  --per_gpu_train_batch_size $config_task1_per_gpu_train_batch_size \
+  --learning_rate $config_task1_learning_rate \
+  --num_train_epochs $config_task1_num_train_epochs \
+  --output_dir $output_dir/$config_task1_task_name
+
+python src/glue/run_glue.py \
+  --model_type $config_task2_model_type \
+  --model_name_or_path $config_task2_model_path \
+  --task_name $config_task2_task_name \
+  --do_train \
+  --do_eval \
+  --do_lower_case \
+  --data_dir $config_task2_glue_dir/$config_task2_task_name/ \
+  --max_seq_length $config_task2_max_seq_length \
+  --per_gpu_train_batch_size $config_task2_per_gpu_train_batch_size \
+  --learning_rate $config_task2_learning_rate \
+  --num_train_epochs $config_task2_num_train_epochs \
+  --output_dir $output_dir/$config_task2_task_name
+
+python src/glue/run_glue.py \
+  --model_type $config_task3_model_type \
+  --model_name_or_path $config_task3_model_path \
+  --task_name $config_task3_task_name \
+  --do_train \
+  --do_eval \
+  --do_lower_case \
+  --data_dir $config_task3_glue_dir/$config_task3_task_name/ \
+  --max_seq_length $config_task3_max_seq_length \
+  --per_gpu_train_batch_size $config_task3_per_gpu_train_batch_size \
+  --learning_rate $config_task3_learning_rate \
+  --num_train_epochs $config_task3_num_train_epochs \
+  --output_dir $output_dir/$config_task3_task_name
+
