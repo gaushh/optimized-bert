@@ -17,4 +17,3 @@ printf "Performing post-processing on the tokenized data"
 python preparation.py
 printf "Running the train script"
 python train_bert.py
-#sh ./run_glue.sh
