@@ -154,15 +154,7 @@ data/raw/raw_dataset/test/
 
 models/tokenizer/
 models/exp01/
-models/
 src/modelling/wandb/
 .idea
 .DS_Store
 
-exp02_logs.out
-exp03_logs.out
-exp04_logs.out
-exp05_logs.out
-exp06_logs.out
-nohup.out
-src/modelling/nohup.out
