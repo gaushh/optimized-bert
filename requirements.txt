@@ -4,3 +4,6 @@ transformers==4.24.
 wandb==0.13.5
 accelerate
 tensorboard
+pytorch_transformers
+tensorboardX
+scikit-learn
