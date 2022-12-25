@@ -7,12 +7,13 @@ source ./yaml_parser.sh
 # model path should be same location as this shell file
 #python src/glue/download_glue_data.py
 export output_dir="output_glue"
-export exp_name="exp01"
+export exp_name="exp03"
 eval $(parse_yaml src/config/glue_config.yaml "config_")
 mkdir $output_dir
+mkdir $output_dir/$exp_name/
 mkdir $output_dir/$exp_name/$config_task1_task_name
-mkdir $output_dir/$exp_name/$config_task1_task_name
-mkdir $output_dir/$exp_name/$config_task1_task_name
+mkdir $output_dir/$exp_name/$config_task2_task_name
+mkdir $output_dir/$exp_name/$config_task3_task_name
 export path_to_models="models"
 python src/glue/run_glue.py \
   --model_type $config_task1_model_type \
